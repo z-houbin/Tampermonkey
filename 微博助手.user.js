@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         微博助手
 // @namespace    http://z.houbin.site/weibo/
-// @version      0.1
-// @description  去除微博广告、卡片小图标、好友赞过、淘宝广告、皮肤入口、底部播放器、首页右边栏
+// @version      0.2
+// @description  去除 微博广告、卡片小图标、好友赞过、淘宝广告、皮肤入口、底部播放器、首页右边栏、小红点
 // @author       z.houbin
 // @match        *://*.weibo.com/*
+// @match        *://weibo.com/*
 // @grant        none
 // ==/UserScript==
 
@@ -15,8 +16,8 @@
             weibo_com();
             break;
         default:
-            loadStyle('.J_adv{display:none !important} ');
             break;
+
     }
 
 
@@ -37,6 +38,9 @@
         css += '.PCD_mplayer {display:none !important}';//播放器
         css += '#v6_pl_rightmod_attfeed {display:none !important}';//好友关注动态
         css += '#v6_pl_rightmod_noticeboard {display:none !important}';//公告栏
+        css += '.W_new{display:none !important}';//小红点
+        css += '.key{display:none !important}';//输入框上面热门
+
         loadStyle(css);
 
         window.onload = function () {
