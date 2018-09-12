@@ -6,19 +6,28 @@
 // @author       z.houbin
 // @match        *://*.iqiyi.com/*
 // @match        *://v.qq.com/*
+// @match        *://tv.sohu.com/*
+// @match        *://*.youku.com/*
+// @match        *://*.baofeng.com/*
 // @grant        none
+// @require https://greasyfork.org/scripts/27102-html2canvas/code/html2canvas.js?version=173516
 // ==/UserScript==
 
 (function () {
+    console.log('run ...');
     "视频截图";
 
-    window.onload = function (ev) {
+    load();
+
+
+    function load() {
+        console.log('load');
         var video = document.getElementsByTagName('video')[0];
         var output = document.createElement('div');
         var capture = document.createElement('a');
         var download = document.createElement('a');
         capture.innerText = '截图';
-        capture.style = 'padding: 9px 25px;\n' +
+        var style = 'padding: 9px 25px;\n' +
             '    border-radius: 30px;\n' +
             '    background: rgba(26,26,26,.8);\n' +
             '    display: block;\n' +
@@ -27,9 +36,30 @@
             '    line-height: 18px;\n' +
             '    font-size: 14px;\n' +
             '    position: absolute;\n' +
-            '    bottom: 70px;\n' +
+            '    z-index: 1000;\n' +
             '    left: 20px;';
-        video.parentElement.appendChild(capture);
+
+
+        if (video === undefined) {
+            setTimeout(load, 1000);
+            return;
+        }
+
+
+        switch (window.location.hostname) {
+            case 'tv.sohu.com':
+                style += 'bottom: 100px;\n';
+                document.getElementById('sohuplayer').appendChild(capture);
+                break;
+            default:
+                style += 'bottom: 70px;\n';
+                video.parentElement.appendChild(capture);
+                break;
+        }
+
+        capture.style = style;
+
+
         var scale = 1;
 
         capture.onclick = function (ev) {
@@ -38,15 +68,36 @@
             canvas.height = video.videoHeight * scale;
             canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
             var img = document.createElement("img");
-            img.src = canvas.toDataURL('image/png');
-            console.log(canvas.toDataURL('image/png'));
-            output.appendChild(img);
+            //img.setAttribute('crossOrigin', '*');
+            html2canvas(document.body, {
+                allowTaint: true,
+                taintTest: false,
+                onrendered: function (canvas) {
+                    canvas.id = "mycanvas";
+                    //document.body.appendChild(canvas);
+                    //生成base64图片数据
+                    var dataUrl = canvas.toDataURL();
+                    var newImg = document.createElement("img");
+                    newImg.src = dataUrl;
+                    document.body.appendChild(newImg);
+                }
+            });
 
-            download.setAttribute('href', canvas.toDataURL('image/png'));
-            download.setAttribute('download', new Date().getTime() + ".png");
-            download.click();
+            setTimeout(function () {
+                var src = canvas.toDataURL('image/png');
+                img.src = src;
+                console.log(src);
+                output.appendChild(img);
+
+                download.setAttribute('href', src);
+                download.setAttribute('download', new Date().getTime() + ".png");
+                download.click();
+            }, 1000);
         };
-    };
+
+        loadStyle('.txp_shadow {display:none !important}');
+    }
+
 
     function loadStyle(css) {
         var style = document.createElement('style');
