@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         绿色下载
 // @namespace    http://z.houbin.site/download
-// @version      0.2
+// @version      0.3
 // @description  去掉下载网站无关内容(高速下载/下载器/页面广告),持续更新中
 // @author       z.houbin
 // @match        *://*/*
@@ -10,7 +10,7 @@
 
 (function () {
     'use strict';
-    console.log('=====绿色下载=====');
+    var path = window.location.pathname;
     switch (window.location.hostname) {
         case 'www.cncrk.com':
             www_cncrk_com();
@@ -139,7 +139,9 @@
             www_jb51_net();
             break;
         case 'www.jisuxz.com':
-            www_jisuxz_com();
+            if (path.indexOf('/down/') == 0) {
+                www_jisuxz_com();
+            }
             break;
         case 'www.dytt8.net':
             www_dytt8_net();
@@ -171,11 +173,37 @@
         case 'www.52z.com':
             www_52z_com();
             break;
+        case 'soft.hao123.com':
+            soft_hao123_com();
+            break;
+        case 'www.kuaihou.com':
+            www_kuaihou_com();
+            break;
         default:
-            loadStyle('.J_adv{display:none !important};ins{display:none !important};');
             break;
     }
 
+    loadStyle('newsfeed{display:none !important};ins{display:none !important};');
+
+    function www_kuaihou_com() {
+        console.log('www_kuaihou_com ad');
+        var css = '#xiazhong1 {display:none !important}';
+        css += '.ad-widget-imageplus-sticker{display:none !important}';
+        css += '.baiduimageplus-s-bd{display:none !important}';
+        css += '.baiduimageplus-s{display:none !important}';
+        css += '#content > div:nth-child(7){display:none !important}';
+        css += '#download > ul > li.address-wrap.on > ul:nth-child(4){display:none !important}';
+        loadStyle(css);
+    }
+
+    function soft_hao123_com() {
+        console.log('soft_hao123_com ad');
+        var css = '.ps_290 {display:none !important}';
+        css += 'iframe{display:none !important}';
+        css += '.popup{display:none !important}';
+        css += '.soft-cont{width:auto!important}';
+        loadStyle(css);
+    }
 
     function www_52z_com() {
         console.log('www_52z_com ad');
@@ -555,6 +583,7 @@
         var css = '.sj{display:none !important}';
         css += '.list_lf{display:none !important}';
         css += '.md_gg{display:none !important}';
+        css += 'iframe{display:none !important}';
         css += '.xzsbox{display:none !important}';
         css += 'div.sort_list > dl:nth-child(1){display:none !important}';
         loadStyle(css);
@@ -667,7 +696,6 @@
         css += 'iframe{display:none !important}';
         css += '.ad{display:none !important}';
         css += '.down-ad{display:none !important}';
-        css += 'div.down-lists > div:nth-child(1){display:none !important}';
         css += 'div.main-right-box > div:nth-child(6){display:none !important}';
         css += '#hengfu{display:none}';
         css += '.links-banner{height:0px !important}';
