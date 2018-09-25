@@ -97,15 +97,13 @@
         var scripts = document.getElementsByTagName('script');
         for (var i = 0; i < scripts.length; i++) {
             var src = scripts[i].getAttribute('src');
-            console.log(i + "," + src);
+            //console.log(i + "," + src);
             if (src != null && src.indexOf('baidu') != -1) {
                 scripts[i].parentElement.removeChild(scripts[i]);
             }
         }
         //查看全部
-        window.onload = function () {
-            document.getElementsByClassName('show_topic js_show_topic')[0].click();
-        };
+        document.getElementsByClassName('show_topic js_show_topic')[0].click();
     }
 
     function loadStyle(css) {
