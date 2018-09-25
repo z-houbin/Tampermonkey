@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CSDN 工具箱
 // @namespace    http://z.houbin.site/csdn/
-// @version      0.3
+// @version      0.4
 // @description  过滤CSDN 广告,包括 博客,论坛,问答,首页和搜索,博客自动展开-阅读更多(csdn.net),去掉博客版权复制信息,论坛查看全部
 // @author       z.houbin
 // @match        *://*.csdn.net/*
