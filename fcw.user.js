@@ -4,13 +4,13 @@
 // @version      0.2
 // @description  去fcw广告和会员限制
 // @author       z.houbin
-// @match        *://www.fcw61.com/*
-// @match        *://www.fcw62.com/*
-// @match        *://www.fcw63.com/*
-// @match        *://www.fcw64.com/*
-// @match        *://www.fcw65.com/*
-// @match        *://www.fcw66.com/*
-// @match        *://www.fcw67.com/*
+// @match        *://*.fcw61.com/*
+// @match        *://*.fcw62.com/*
+// @match        *://*.fcw63.com/*
+// @match        *://*.fcw64.com/*
+// @match        *://*.fcw65.com/*
+// @match        *://*.fcw66.com/*
+// @match        *://*.fcw67.com/*
 // @grant        none
 // ==/UserScript==
 
