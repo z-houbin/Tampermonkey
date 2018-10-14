@@ -7,6 +7,10 @@
 // @match        *://www.fcw61.com/*
 // @match        *://www.fcw62.com/*
 // @match        *://www.fcw63.com/*
+// @match        *://www.fcw64.com/*
+// @match        *://www.fcw65.com/*
+// @match        *://www.fcw66.com/*
+// @match        *://www.fcw67.com/*
 // @grant        none
 // ==/UserScript==
 
