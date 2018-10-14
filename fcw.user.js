@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         fcw
 // @namespace    z.houbin.site/fcw
-// @version      0.1
+// @version      0.2
 // @description  去fcw广告和会员限制
 // @author       z.houbin
 // @match        *://www.fcw61.com/*
