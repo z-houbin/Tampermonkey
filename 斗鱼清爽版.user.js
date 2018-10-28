@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         斗鱼清爽版
 // @namespace    http://z.houbin.site/douyu/
-// @version      0.5
+// @version      0.6
 // @description  斗鱼清爽版,去送礼通知,二维码,聊天顶部贵族,系统通知,礼物通知,竞猜,鱼吧,推荐,聊天样式统一,一些小按钮
 // @author       z.houbin
 // @match        *://www.douyu.com/*
@@ -18,7 +18,8 @@
     css += '.js-fans-dysclick{display:none !important;}';//粉丝牌
     css += '.SignBaseComponent-sign-ad{display:none !important;}';//提示登录广告
     css += '.sq-ad{display:none !important;}';//提示登录广告
-    css += '.layout-Player-toolbar{display:none !important;height:0px !important}';//视频下方礼物信息
+    css += '.layout-Player-toolbar{visibility:hidden !important;}';//视频下方礼物信息
+    css += '.layout-Player-video{bottom:0px !important}';//视频区高度
     css += '.stats-and-actions{display:none !important;height:0px !important}';//视频下方礼物信息
     css += '.sys-tips{display:none !important;}';//系统提示
     css += '.Title-roomOtherBottom{display:none !important;}';//分享/客户端观看
@@ -47,7 +48,7 @@
     css += '.chat-ad{display:none !important;}';//聊天广告(签到)
     css += '.chat-icon-pad{margin:0 !important;}';//聊天等级对齐
     css += '.lol-ad{display:none !important;}';//聊天等级对齐
-
+    css += '.is-show{display:none !important;}';//
 
 
     setTimeout(function () {
