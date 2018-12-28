@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         绿色下载
 // @namespace    http://z.houbin.site/download
-// @version      0.3
+// @version      0.4
 // @description  去掉下载网站无关内容(高速下载/下载器/页面广告),持续更新中
 // @author       z.houbin
 // @match        *://*/*
@@ -504,6 +504,14 @@
         css += '#div_23{display:none !important}';
         css += '.xzbox-gh{display:none !important}';
         css += '.zxbq{display:none !important}';
+        css += '.gaosu{display:none !important}';
+        css += '.samesoft{display:none !important}';
+        css += '.soft-label{display:none !important}';
+        css += '.comment_box{display:none !important}';
+        css += '#jprj{display:none !important}';
+        css += '#djdxh{display:none !important}';
+        css += '.abcbox{display:none !important}';
+        css += 'body > div.main > div.content > div:nth-child(2){display:none !important}';
         css += 'newsfeed{display:none !important}';
         css += '#xzdz > div.xzbox > div.xzbox-lf > p:nth-child(2){display:none !important}';
         css += '#xzdz > div.xzbox > div.xzbox-lf > ul:nth-child(3){display:none !important}';
@@ -535,6 +543,15 @@
         css += '.detail-main-title{display:none !important}';
         css += '.alliance-ad{display:none !important}';
         css += '.underline{display:none !important}';
+        css += '.c_soft_same{display:none !important}';
+        css += '.fastdownload{display:none !important}';
+        css += '.address_r{display:none !important}';
+        css += '.topdown{display:none !important}';
+        css += '.g-fx{display:none !important}';
+        css += '#pl{display:none !important}';
+        css += '#xgwz{display:none !important}';
+        css += '#blzx{display:none !important}';
+        css += '#bltj{display:none !important}';
         css += '.softdza{display:none !important}';
         css += '.xiangguan-ad{display:none !important}';
         css += 'ul.ul_Address > h3{display:none !important}';
@@ -554,8 +571,13 @@
         var css = '.cross-ad{display:none !important}';
         css += '.yinsu_yd{display:none !important}';
         css += '.detail-main-title{display:none !important}';
+        css += 'iframe{display:none !important}';
         css += '.alliance-ad{display:none !important}';
+        css += 'div.half-lad.fl > div.fr > a > img{display:none !important}';
         css += '.underline{display:none !important}';
+        css += '.soft-desc-heji{display:none !important}';
+        css += '.side{display:none !important}';
+        css += '.soft-xiangguan{display:none !important}';
         css += '.softdza{display:none !important}';
         css += '.xiangguan-ad{display:none !important}';
         loadStyle(css);
@@ -563,18 +585,10 @@
 
     function www_xitongzhijia_net() {
         console.log('www_xitongzhijia_net ad');
-        var css = '.AD_1200_108 {display:none !important}';
-        css += '.AD_298_304{display:none !important}';
-        css += 'div.fix>div:nth-child(2){display:none !important}';
-        css += '.m-related-link{display:none !important}';
-        css += '.AD_800_68{display:none !important}';
-        css += 'newsfeed{display:none !important}';
-        css += 'div.inner.fl.fix > div > h3:nth-child(3){display:none !important}';
-        css += 'div.inner.fl.fix > div > ul:nth-child(0){display:none !important}';
-        css += 'div.inner.fl.fix > div > ul:nth-child(1){display:none !important}';
-        css += 'div.inner.fl.fix > div > ul:nth-child(2){display:none !important}';
-        css += 'div.inner.fl.fix > div > ul:nth-child(3){display:none !important}';
-        css += 'div.inner.fl.fix > div > ul:nth-child(4){display:none !important}';
+        var css = 'iframe{display:none !important}';
+        css += ".m-related-list{display:none !important}";
+        css += ".m-faq {display:none !important}";
+        css += "div.art-detail.fix > div:nth-child(2){display:none !important}";
         loadStyle(css);
     }
 
@@ -584,17 +598,23 @@
         css += '.list_lf{display:none !important}';
         css += '.md_gg{display:none !important}';
         css += 'iframe{display:none !important}';
+        css += '.boxlist {display:none !important}';
+        css += '.gjcbox {display:none !important}';
+        css += '.g-hotico {display:none !important}';
+        css += '#djdxh {display:none !important}';
         css += '.xzsbox{display:none !important}';
-        css += 'div.sort_list > dl:nth-child(1){display:none !important}';
+        css += '.share{display:none !important}';
+        css += 'div.sortbox > div > dl:nth-child(1){display:none !important}';
         loadStyle(css);
     }
 
     function www_33lc_com() {
         console.log('www_33lc_com ad');
-        var css = '.list_lf{display:none !important}';
-        css += '.xzsbox{display:none !important}';
-        css += '.bzbox{display:none !important}';
-        css += '.ggbox{display:none !important}';
+        var css = 'iframe{display:none !important;height:0px !important}';
+        css += '.share{display:none !important}';
+        css += 'div.md_bt > div.bt_abtn > a.ags{display:none !important}';
+        css += '#gdgs_r{display:none !important}';
+        css += '#adbox{display:none !important}';
         css += 'div.dl_list_info > dl:nth-child(1){display:none !important}';
         loadStyle(css);
     }
@@ -605,6 +625,13 @@
         css += '.hm-t-container{display:none !important}';
         css += '.hm_t_2591{display:none !important}';
         css += 'iframe{display:none !important}';
+        css += '.hot-soft{display:none !important}';
+        css += '.soft-hot-bd{display:none !important}';
+        css += '.hot-search{display:none !important}';
+        css += '.top-download{display:none !important}';
+        css += 'div.maindown_w4 > a.m-bdtn.downnowgaosu{display:none !important}';
+        css += '.soft-details-news{display:none !important}';
+        css += '#comment{display:none !important}';
         css += '#gaosuxiazai{display:none !important}';
         css += 'body > section.mg-t10.layout.clear > article > section:nth-child(5){display:none !important}';//猜你喜欢
         css += '#download > section.download-mod.mg-Lr20.clear.zm > article.clear > section > div > ul > h3:nth-child(3){display:none !important}';
@@ -615,20 +642,32 @@
         console.log('www_fixdown_com ad');
         var css = '.md_bt{display:none !important}';
         css += 'iframe{display:none !important}';
-        css += '.list_lf{display:none !important}';
-        css += '.ad_id_1{display:none !important}';
-        css += '.list_bt{display:none !important}';
-        css += 'div.sort_list>dl:nth-child(1){display:none !important}';
+        css += '.gjcbox{display:none !important}';
+        css += '.rmbox{display:none !important}';
+        css += '#xzqdzbox > div.tab_list.tab_list_1 > div.xzdz_wrap.clearfix > div > div > div > dl:nth-child(1){display:none !important}';
+        //css += '.ad_id_1{display:none !important}';
+        // css += '.list_bt{display:none !important}';
+        // css += 'div.sort_list>dl:nth-child(1){display:none !important}';
         loadStyle(css);
     }
 
     function www_xpgod_com() {
         console.log('www_xpgod_com ad');
         var css = '.top_r{display:none !important}';
-        css += 'iframe{display:none !important}';
+        css += 'iframe{display:none !important;height:0px !important}';
         css += '.soft_snap{display:none !important}';
         css += '.gg{display:none !important}';
+        css += '.art_lm_gg{display:none !important;height:0px !important}';
         css += '.show_xzq{display:none !important}';
+        css += '.tltj_r{display:none !important}';
+        css += '#bzxz > a:nth-child(2){display:none !important}';
+        css += '.soft_rmsy{display:none !important}';
+        css += '.rmzt{display:none !important}';
+        css += '#cnxh{display:none !important}';
+        css += '#sr_top{display:none !important}';
+        css += '.share{display:none !important}';
+        css += '.gjc{display:none !important}';
+        css += 'div.softny1 > div.box > div.box_l > div.button{display:none !important}';
         loadStyle(css);
     }
 
@@ -637,6 +676,13 @@
         var css = '.show_970{display:none !important}';
         css += 'iframe{display:none !important}';
         css += '.m-soft-ad{display:none !important}';
+        css += '.icolst{display:none !important}';
+        css += '.c_info_side{display:none !important}';
+        css += '#class-cms{display:none !important}';
+        css += '#class-soft{display:none !important}';
+        css += '#comment_list{display:none !important}';
+        css += '.downnowgaosu{display:none !important}';
+        css += 'div.span3.m-log-search > ul{display:none !important}';
         //css += '#c_des_content > div:nth-child(6){display:none !important}';
         css += '#full_downad{display:none !important}';
         css += 'ul.ul_Address > li:nth-child(0){display:none !important}';
@@ -668,12 +714,12 @@
 
     function www_xiazaiba_com() {
         console.log('www_xiazaiba_com ad');
-        var css = 'body > div.container > div.top-container > div:nth-child(12){display:none !important}';
-        css += 'iframe{display:none !important}';
-        css += 'body > div.container > div.top-container > div:nth-child(13){display:none !important}';
-        css += '#download-box{display:none !important}';
-        css += '#downlist > div:nth-child(1){display:none !important}';
+        var css = 'iframe{display:none !important}';
+        css += '[class*="adv"]{display:none !important}';
         css += '.search-adv{display:none !important}';
+        css += '.soft-keys{display:none !important}';
+        css += '.list-hot{display:none !important}';
+        css += '#downlist > div:nth-child(1){display:none !important}';
         loadStyle(css);
     }
 
@@ -683,6 +729,13 @@
         css += 'iframe{display:none !important}';
         css += '.bkdown{display:none !important}';
         css += '.ad{display:none !important}';
+        css += '.comments{display:none !important}';
+        css += '.head-recomm{display:none !important}';
+        css += '.bk-soft_news{display:none !important}';
+        css += '.bk-soft_ranking{display:none !important}';
+        css += '.side-down4{display:none !important}';
+        css += '.bk-soft_otherdown{display:none !important}';
+        css += '.bk-soft_relespecial{display:none !important}';
         css += 'div.pull-left.url > ul.cl.top{display:none !important}';
         css += '.yestkydownad{display:none !important}';
         css += 'qihoobannerslider{display:none !important}';
@@ -698,6 +751,8 @@
         css += '.down-ad{display:none !important}';
         css += 'div.main-right-box > div:nth-child(6){display:none !important}';
         css += '#hengfu{display:none}';
+        css += '.comment{display:none}';
+        css += 'div.down-lists > div:nth-child(1){display:none}';
         css += '.links-banner{height:0px !important}';
         css += 'div.dl_area > div:nth-child(2){height:0px !important;display:none !important}';
         css += 'body > div.wrapper > div.main > div>div:first-child{height:0px !important;display:none !important}';
@@ -725,6 +780,24 @@
         css += 'iframe{display:none !important}';
         css += '.ad{display:none !important}';
         css += '.ad2{display:none !important}';
+        css += '.tagsk{display:none !important}';
+        css += '.sendErr-wrap{display:none !important}';
+        css += '#xgsp{display:none !important}';
+        css += '#xgd{display:none !important}';
+        css += '#company{display:none !important}';
+        css += '#xgw{display:none !important}';
+        css += '#reci{display:none !important}';
+        css += '#autotab{display:none !important}';
+        css += '#xgk{display:none !important}';
+        css += '#bdfx{display:none !important}';
+        css += '#dside{display:none !important}';
+        css += '.enjoy{display:none !important}';
+        css += '.ilist{display:none !important}';
+        css += '.xgwz{display:none !important;height:0px important;}';
+        css += '#comment{display:none !important}';
+        css += '#comment-wrap{display:none !important}';
+        css += '#innzt{display:none !important}';
+        css += '#sidebar{display:none !important}';
         css += '#topbanner2{height:0px;display:none !important}';
         css += '.ad-download{height:0px;display:none !important}';
         css += '#gaosuxiazai{height:0px;display:none !important}';
@@ -759,7 +832,14 @@
         console.log('www_wmzhe_com ad');
         var css = '.download{display:none !important}';
         css += 'iframe{display:none !important}';
+        css += '.bdsharebuttonbox {display:none !important;height:0px !important}';
+        css += '.zhuanti {display:none !important}';
+        css += '.jiaocheng{display:none !important}';
+        css += '.tuijian {display:none !important}';
+        css += '.tags {display:none !important}';
+        css += '#samesoft {display:none !important}';
         css += '.down + div +div{display:none !important}';
+        css += 'ins{display:none !important}';
         css += 'div.down > dl:nth-child(2){display:none !important}';
 
         var overflow = document.getElementsByClassName('overflow');
@@ -792,6 +872,7 @@
         css += 'newsfeed{display:none !important}';
         css += '#mv_ad_render{display:none !important}';
         css += '.downgs{display:none !important}';
+        css += '#ItemXGJC{display:none !important}';//相关文章
 
         loadStyle(css);
     }
@@ -805,17 +886,28 @@
 
     function dl_pconline_com_cn() {
         console.log('dl_pconline_com_cn ad');
-        var css = '.msg-r{display:none !important}';
-        css += '#JhsBtn{display:none !important}';
+        var css = '.ivy{display:none !important}';
+        css += '[id*="ad"]{display:none !important}';
         css += '.rela-ivy{display:none !important}';
-        css += '.ivy{display:none !important}';
-        css += 'newsfeed{display:none !important}';
-        css += '.btn-org{display:none !important}';
-        css += '.block-jcz{display:none !important}';
+        css += '#rela-dl{display:none !important}';
+        css += '#rela-subject{display:none !important}';
+        css += '#rela-arts{display:none !important}';
+        css += '.rela-new{display:none !important}';
         css += '.rela-best{display:none !important}';
-        css += '.box-tags{display:none !important}';
-        css += '.tab-nav{display:none !important}';
+        css += '.box-push{display:none !important}';
+        css += '.sc-last{display:none !important}';
+        css += '.new-twice-a{display:none !important}';
+        css += '.block-jcz{display:none !important}';
         css += '.soft-rel{display:none !important}';
+        css += '.box-tags{display:none !important}';
+        css += '.seo-links{display:none !important}';
+        // css += 'newsfeed{display:none !important}';
+        // css += '.btn-org{display:none !important}';
+        // css += '.block-jcz{display:none !important}';
+        // css += '.rela-best{display:none !important}';
+        // css += '.box-tags{display:none !important}';
+        // css += '.tab-nav{display:none !important}';
+        // css += '.soft-rel{display:none !important}';
 
         loadStyle(css);
     }
@@ -828,6 +920,8 @@
         css += 'iframe{display:none !important}';
         css += '.soft-xiangguan{display:none !important}';
         css += '.hot-keys{display:none !important}';
+        css += 'div.fastdownload > div.downbtn > a.orange{display:none !important}';
+        css += '#soft-likeArc{display:none !important}';
         loadStyle(css);
     }
 
@@ -850,27 +944,28 @@
         css += 'qihoobannerslider{display:none !important}';
         css += '.downbtn{display:none !important}';
         css += '.newsfeed{display:none !important}';
-
+        css += '.pc-down_relenews{display:none !important}';
+        css += '.pc-down_tags{display:none !important}';
+        css += '.pc-down_special{display:none !important}';
+        css += 'iframe{display:none !important}';
+        css += '.relever{display:none !important}';
+        css += '.share{display:none !important}';
+        css += '.chanel-softall{display:none !important}';
+        css += '.search_hot{display:none !important}';
         loadStyle(css);
     }
 
     function www_cncrk_com() {
         console.log('www_cncrk_com ad');
-        var css = '.min-sd{display:none !important}';
-        css += '.area-c{display:none !important}';
-        css += '.xz_top{display:none !important}';
-        css += '#xzsbox{display:none !important}';
-        css += '.xzbox-lf{display:none !important}';
-        css += 'iframe{display:none !important}';
+        var css = 'iframe{display:none !important}';
+        css += '.gsdt{display:none !important}';
+        css += '.jsTAB_CON{display:none !important}';
+        css += '#djdxh{display:none !important}';
+        css += '#wypl{display:none !important}';
+        css += '#jprj{display:none !important}';
         css += '.downfile_hits{display:none !important}';
-        css += '.bnt0{display:none !important}';
+        css += 'body > div.main > div.content > div:nth-child(2) > div{display:none !important}';
         loadStyle(css);
-
-        var sort_list = document.getElementsByClassName('sort_list');
-        if (sort_list.length != 0) {
-            sort_list[0].children[0].style = 'display:none';
-        }
-
     }
 
     function loadStyle(css) {
