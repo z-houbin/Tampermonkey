@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name         CSDN 工具箱
 // @namespace    http://z.houbin.site/csdn/
-// @version      0.5
+// @version      0.6
 // @description  过滤CSDN 广告,包括 博客,论坛,问答,首页和搜索,博客自动展开-阅读更多(csdn.net),去掉博客版权复制信息,论坛查看全部
 // @author       z.houbin
 // @match        *://*.csdn.net/*
 // @grant        none
+// @downloadURL none
 // ==/UserScript==
 
 (function () {
@@ -38,9 +39,9 @@
         console.log('copy');
         var data = e.clipboardData;
         var text = data.getData('text');
-        var pos = text.indexOf('---------------------');
+        var pos = text.indexOf('————————————————');
         if (pos !== -1) {
-            text = text.substring(0, pos - 4);
+            text = text.substring(0, pos - 2);
             data.setData('text', text);
         }
     });
@@ -52,14 +53,36 @@
 
     function blog_csdn_net() {
         console.log('blog_csdn_net');
-        loadStyle('.J_adv{display:none !important} .recommend-ad-box{display:none} .mb8{display:none} .bdsharebuttonbox{display:none} .p4course_target{display:none !important} newsfeed{display:none !important} .pulllog-box{display:none !important} #adAways{display:none} .btn-remove{display:none !important}');
+        loadStyle(".type_hot_word{display:none !important} .blog-expert-recommend-box{display:none !important} iframe[src*='pos.baidu.com']{display:none !important} .J_adv{display:none !important} .recommend-ad-box{display:none} .mb8{display:none} .bdsharebuttonbox{display:none} .p4course_target{display:none !important} newsfeed{display:none !important} .pulllog-box{display:none !important} #adAways{display:none} .btn-remove{display:none !important}");
 
-        document.getElementById('asideFooter').children[0].style = 'display:none';
+        //展开全文
+        $("#article_content").removeAttr("style");
+        //展开全文
+        $(".hide-article-box").remove();
+        //二维码
+        $("#asideFooter").remove();
+        //推荐文章
+        $(".recommend-box").remove();
+        //最新评论
+        $("#asideNewComments").remove();
+        //热门文章
+        $("#asideHotArticle").remove();
+        //最新文章
+        $("#asideNewArticle").remove();
+        //归档
+        $("#asideArchive").remove();
+        //评论框
+        $(".comment-box").remove();
 
-        //博客自动展开
-        window.onload = function () {
-            document.getElementById("btn-readmore").click();
-        };
+
+        //首页
+        //二维码
+        $(".persion_article").remove();
+        //广告
+        $(".right_extension").remove();
+        //博客专家
+        $(".feed_media_list").remove();
+        $('body > div.container.clearfix > div > aside > div:nth-child(2)').remove()
     }
 
     function www_csdn_net() {
@@ -75,10 +98,19 @@
     function download_csdn_net() {
         console.log('download_csdn_net');
         loadStyle('.J_adv{display:none}  .dl_mar{display:none} #_yd_ad_1{display:none !important} #_yd_ad_2{display:none !important} #_yd_ad_3{display:none !important} .newsfeed{display:none !important} .ad_wrap{display:none}');
+        $('iframe').remove();
+        $('.pull-right').remove();
+        $('.download_r').remove();
     }
 
     function bbs_csdn_net() {
         console.log('bbs_csdn_net');
+        //本周牛人
+        $('body > div.csdn_bbs_main.pad_left > div.bbs_main_wrap > div.bbs_left_wrap.fl > div:nth-child(2)').remove();
+        $('.totast-box').remove();
+        $('.right-box').remove();
+        $('.post_recommend').remove();
+
         //论坛首页 J_adv
         //登录注册 pulllog-box
         //主贴下广告 bd_ad_2
